@@ -1,20 +1,20 @@
+import { NavigationContainer } from '@react-navigation/native';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { View } from 'react-native';
+import { Provider } from 'react-redux';
+import tw from './src/lib/tailwind';
+import StackNavigator from './src/navigators/StackNavigator';
+import { store } from './src/store/redux/store';
 
 export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+    return (
+        <View style={tw`flex-1`}>
+            <Provider store={store}>
+                <NavigationContainer>
+                    <StackNavigator />
+                </NavigationContainer>
+            </Provider>
+            <StatusBar style="light" />
+        </View>
+    );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
