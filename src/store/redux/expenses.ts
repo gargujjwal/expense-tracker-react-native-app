@@ -1,6 +1,7 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { DUMMY_EXPENSES } from "../../dummy";
 import { Expense } from "../../types/types";
+import { addDoc } from "firebase/firestore";
 
 export const expenseSlice = createSlice({
     name: "expenses",
@@ -11,6 +12,7 @@ export const expenseSlice = createSlice({
                 id: Math.random().toString(),
                 ...action.payload,
             });
+            // addDoc(db, "expenses", )
         },
         deleteExpense(state, { payload }: PayloadAction<{ id: string }>) {
             state.splice(
