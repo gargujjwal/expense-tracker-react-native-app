@@ -2,24 +2,24 @@
 
 <!-- Project Shields -->
 <p align="center">
-  <a href="https://github.com/ujjwalgarg100204/expense-tracker-react-native/network/members"
+  <a href="https://github.com/ujjwalgarg100204/expense-tracker-react-native-app/network/members"
   >
     <img
-      src="https://img.shields.io/github/forks/ujjwalgarg100204/expense-tracker-react-native.svg?style=for-the-badge"
+      src="https://img.shields.io/github/forks/ujjwalgarg100204/expense-tracker-react-native-app.svg?style=for-the-badge"
       alt="fork-shield"
     />
   </a>
   <a
-    href="https://github.com/ujjwalgarg100204/expense-tracker-react-native/blob/master/LICENSE.txt"
+    href="https://github.com/ujjwalgarg100204/expense-tracker-react-native-app/blob/master/LICENSE.txt"
   >
     <img
-      src="https://img.shields.io/github/license/ujjwalgarg100204/expense-tracker-react-native.svg?style=for-the-badge"
+      src="https://img.shields.io/github/license/ujjwalgarg100204/expense-tracker-react-native-app.svg?style=for-the-badge"
       alt="license-shield"
     />
   </a>
-  <a href=" https://github.com/ujjwalgarg100204/expense-tracker-react-native/stargazers">
+  <a href=" https://github.com/ujjwalgarg100204/expense-tracker-react-native-app/stargazers">
     <img
-      src="https://img.shields.io/github/stars/ujjwalgarg100204/expense-tracker-react-native.svg?style=for-the-badge"
+      src="https://img.shields.io/github/stars/ujjwalgarg100204/expense-tracker-react-native-app.svg?style=for-the-badge"
       alt="star-shield"
     />
   </a>
@@ -50,13 +50,13 @@
     Take control of your finances with SmartExpense, the ultimate expense tracker app. Effortlessly manage your expenses, track your spending, and stay on top of your budget with ease.
     <br />
     <a
-      href="https://github.com/ujjwalgarg100204/expense-tracker-react-native/issues"
+      href="https://github.com/ujjwalgarg100204/expense-tracker-react-native-app/issues"
       aria-label="Link to issues of github repo"
       >Report Bug</a
     >
     ·
     <a
-      href="https://github.com/ujjwalgarg100204/expense-tracker-react-native/issues"
+      href="https://github.com/ujjwalgarg100204/expense-tracker-react-native-app/issues"
       aria-label="Link to issues of github repo"
       >Request Feature</a
     >
@@ -164,7 +164,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 ## Links
 
--   Live Site URL: [https://expense-tracker-react-native.onrender.com](https://expense-tracker-react-native.onrender.com)
+-   Live Site URL: [https://expense-tracker-react-native-app.onrender.com](https://expense-tracker-react-native-app.onrender.com)
 
 <!-- AUTHOR -->
 
