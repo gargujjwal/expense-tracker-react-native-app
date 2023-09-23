@@ -6,28 +6,28 @@ import ExpenseListItem from "./ExpenseListItem";
 import tw from "../../lib/tailwind";
 
 type Props = {
-	expenses: Expense[];
+    expenses: Expense[];
 };
 
 const renderExpenseItem = ({ item }: ListRenderItemInfo<Expense>) => {
-	return <ExpenseListItem {...item} />;
+    return <ExpenseListItem {...item} />;
 };
 
 const ExpensesList = ({ expenses }: Props) => {
-	return (
-		<FlatList
-			data={expenses}
-			keyExtractor={expense => expense.id}
-			renderItem={renderExpenseItem}
-			ListEmptyComponent={
-				<View>
-					<Text style={tw`text-white text-center`}>
-						No expenses found... Winning 🏆
-					</Text>
-				</View>
-			}
-		/>
-	);
+    return (
+        <FlatList
+            data={expenses}
+            keyExtractor={expense => expense.id}
+            renderItem={renderExpenseItem}
+            ListEmptyComponent={
+                <View>
+                    <Text style={tw`text-white text-center`}>
+                        No expenses found... Winning 🏆
+                    </Text>
+                </View>
+            }
+        />
+    );
 };
 
 export default ExpensesList;

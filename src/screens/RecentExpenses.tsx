@@ -1,22 +1,36 @@
-import React from "react";
+import {
+    FirebaseResponseType,
+    useGetExpensesQuery,
+} from "../store/redux/expensesAPI";
+import React, { useEffect, useState } from "react";
+import { firebaseExpensesToExpenses, getDateMinusDays } from "../utils";
+
+import { Expense } from "../types/types";
 import ExpensesOutput from "../components/ExpensesOutput/ExpensesOutput";
-import { useAppSelector } from "../hooks/store";
-import { getDateMinusDays } from "../utils";
 
 const RecentExpensesScreen = () => {
-	const expenses = useAppSelector(state => state.expense);
-	const recentExpenses = expenses.filter(expense => {
-		const today = new Date();
-		const date7DaysAgo = getDateMinusDays(today, 7);
-		return new Date(expense.date) > date7DaysAgo;
-	});
+    const { data } = useGetExpensesQuery(undefined);
 
-	return (
-		<ExpensesOutput
-			expenses={recentExpenses}
-			expensesPeriod="Last 7 Days..."
-		/>
-	);
+    const [recentExpenses, setRecentExpenses] = useState<Expense[]>([]);
+
+    useEffect(() => {
+        if (!data) return;
+
+        setRecentExpenses(
+            firebaseExpensesToExpenses(data).filter(expense => {
+                const today = new Date();
+                const date7DaysAgo = getDateMinusDays(today, 7);
+                return new Date(expense.date) > date7DaysAgo;
+            }),
+        );
+    }, [data]);
+
+    return (
+        <ExpensesOutput
+            expenses={recentExpenses}
+            expensesPeriod="Last 7 Days..."
+        />
+    );
 };
 
 export default RecentExpensesScreen;

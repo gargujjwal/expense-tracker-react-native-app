@@ -7,26 +7,26 @@ import BottomTabsNavigator from "./BottomTabsNavigator";
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
 const StackNavigator = () => {
-	return (
-		<Stack.Navigator
-			initialRouteName="ExpenseOverview"
-			screenOptions={{
-				headerStyle: tw`bg-primary-500`,
-				headerTintColor: "white",
-			}}
-		>
-			<Stack.Screen
-				name="ExpenseOverview"
-				component={BottomTabsNavigator}
-				options={{ headerShown: false }}
-			/>
-			<Stack.Screen
-				name="MangeExpense"
-				component={ManageExpensesScreen}
-				options={{ presentation: "modal" }}
-			/>
-		</Stack.Navigator>
-	);
+    return (
+        <Stack.Navigator
+            initialRouteName="ExpenseOverview"
+            screenOptions={{
+                headerStyle: tw`bg-primary-500`,
+                headerTintColor: "white",
+            }}
+        >
+            <Stack.Screen
+                name="ExpenseOverview"
+                component={BottomTabsNavigator}
+                options={{ headerShown: false }}
+            />
+            <Stack.Screen
+                name="MangeExpense"
+                component={ManageExpensesScreen}
+                options={{ presentation: "modal" }}
+            />
+        </Stack.Navigator>
+    );
 };
 
 export default StackNavigator;
