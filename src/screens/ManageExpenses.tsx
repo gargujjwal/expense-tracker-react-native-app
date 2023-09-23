@@ -5,7 +5,6 @@ import ExpenseDeleteButton from "../components/MangeExpense/ExpenseDeleteButton"
 import ExpenseEditForm from "../components/MangeExpense/ExpenseEditForm";
 import ExpenseNewForm from "../components/MangeExpense/ExpenseNewForm";
 import tw from "../lib/tailwind";
-import { useGetExpenseByIdQuery } from "../store/redux/expensesAPI";
 import type { RootStackScreenProps } from "../types/navigation";
 
 const ManageExpensesScreen = ({
@@ -14,8 +13,6 @@ const ManageExpensesScreen = ({
         params: { expenseId },
     },
 }: RootStackScreenProps<"MangeExpense">) => {
-    const {} = useGetExpenseByIdQuery("");
-
     const isEditing = !!expenseId;
 
     useEffect(() => {

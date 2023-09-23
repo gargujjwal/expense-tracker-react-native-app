@@ -5,8 +5,8 @@ import {
 import ExpenseForm, { ExpenseFormProps } from "./ExpenseForm";
 
 import React from "react";
-import { Text } from "react-native";
 import { Expense } from "../../types/types";
+import LoadingSpinner from "../ui/LoadingSpinner";
 
 type Props = {
     expense: Pick<Expense, "id">;
@@ -22,7 +22,9 @@ const ExpenseEditForm = ({ expense, onCancel, onConfirm }: Props) => {
         onConfirm();
     };
 
-    if (isLoading) return <Text>Loading ...</Text>;
+    if (isLoading)
+        return <LoadingSpinner text="Editing your expense, hang on" />;
+
     return (
         <ExpenseForm
             expense={data}

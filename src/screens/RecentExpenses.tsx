@@ -1,15 +1,13 @@
-import {
-    FirebaseResponseType,
-    useGetExpensesQuery,
-} from "../store/redux/expensesAPI";
 import React, { useEffect, useState } from "react";
 import { firebaseExpensesToExpenses, getDateMinusDays } from "../utils";
 
-import { Expense } from "../types/types";
 import ExpensesOutput from "../components/ExpensesOutput/ExpensesOutput";
+import LoadingSpinner from "../components/ui/LoadingSpinner";
+import { useGetExpensesQuery } from "../store/redux/expensesAPI";
+import { Expense } from "../types/types";
 
 const RecentExpensesScreen = () => {
-    const { data } = useGetExpensesQuery(undefined);
+    const { data, isLoading } = useGetExpensesQuery(undefined);
 
     const [recentExpenses, setRecentExpenses] = useState<Expense[]>([]);
 
@@ -24,6 +22,8 @@ const RecentExpensesScreen = () => {
             }),
         );
     }, [data]);
+
+    if (isLoading) return <LoadingSpinner text="Loading your expenses" />;
 
     return (
         <ExpensesOutput

@@ -2,6 +2,7 @@ import ExpenseForm, { ExpenseFormProps } from "./ExpenseForm";
 
 import React from "react";
 import { useAddExpenseMutation } from "../../store/redux/expensesAPI";
+import LoadingSpinner from "../ui/LoadingSpinner";
 
 type Props = {
     onCancel: () => void;
@@ -9,11 +10,13 @@ type Props = {
 };
 
 const ExpenseNewForm = ({ onCancel, onConfirm }: Props) => {
-    const [addExpense] = useAddExpenseMutation();
+    const [addExpense, { isLoading }] = useAddExpenseMutation();
     const handleFormConfirm: ExpenseFormProps["onConfirm"] = updatedExpense => {
         addExpense(updatedExpense);
         onConfirm();
     };
+
+    if (isLoading) return <LoadingSpinner text="Adding your expense" />;
 
     return <ExpenseForm onCancel={onCancel} onConfirm={handleFormConfirm} />;
 };
