@@ -1,4 +1,5 @@
 import { Text, TextInput, TextInputProps, View } from "react-native";
+
 import { ClassInput } from "twrnc/dist/esm/types";
 import tw from "../../lib/tailwind";
 

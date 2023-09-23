@@ -1,9 +1,9 @@
-import React from "react";
-import { View, Text, FlatList } from "react-native";
+import { FlatList, Text, View } from "react-native";
+
 import type { ListRenderItemInfo } from "react-native";
+import tw from "../../lib/tailwind";
 import type { Expense } from "../../types/types";
 import ExpenseListItem from "./ExpenseListItem";
-import tw from "../../lib/tailwind";
 
 type Props = {
     expenses: Expense[];

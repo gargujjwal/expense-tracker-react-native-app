@@ -1,12 +1,11 @@
+import ExpenseForm, { ExpenseFormProps } from ".";
 import {
     useGetExpenseByIdQuery,
     useUpdateExpenseMutation,
-} from "../../store/redux/expensesAPI";
-import ExpenseForm, { ExpenseFormProps } from "./ExpenseForm";
+} from "../../../store/redux/expensesAPI";
 
-import React from "react";
-import { Expense } from "../../types/types";
-import LoadingSpinner from "../ui/LoadingSpinner";
+import { Expense } from "../../../types/types";
+import LoadingSpinner from "../../ui/LoadingSpinner";
 
 type Props = {
     expense: Pick<Expense, "id">;

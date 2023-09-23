@@ -2,8 +2,8 @@ import React, { useEffect } from "react";
 
 import { View } from "react-native";
 import ExpenseDeleteButton from "../components/MangeExpense/ExpenseDeleteButton";
-import ExpenseEditForm from "../components/MangeExpense/ExpenseEditForm";
-import ExpenseNewForm from "../components/MangeExpense/ExpenseNewForm";
+import ExpenseEditForm from "../components/MangeExpense/ExpenseForm/ExpenseEditForm";
+import ExpenseNewForm from "../components/MangeExpense/ExpenseForm/ExpenseNewForm";
 import tw from "../lib/tailwind";
 import type { RootStackScreenProps } from "../types/navigation";
 

@@ -1,11 +1,10 @@
 import { Pressable, Text, View } from "react-native";
 
-import { Expense } from "../../types/types";
-import React from "react";
-import { RootStackNavigationProps } from "../../types/navigation";
-import { getFormattedDate } from "../../utils";
-import tw from "../../lib/tailwind";
 import { useNavigation } from "@react-navigation/native";
+import tw from "../../lib/tailwind";
+import { RootStackNavigationProps } from "../../types/navigation";
+import { Expense } from "../../types/types";
+import { getFormattedDate } from "../../utils";
 
 type Props = Pick<Expense, "id" | "desc" | "amount" | "date">;
 

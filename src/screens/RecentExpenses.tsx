@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { firebaseExpensesToExpenses, getDateMinusDays } from "../utils";
 
 import ExpensesOutput from "../components/ExpensesOutput/ExpensesOutput";

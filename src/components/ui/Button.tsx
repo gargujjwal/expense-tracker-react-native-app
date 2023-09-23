@@ -1,5 +1,5 @@
-import React from "react";
 import { Pressable, Text, View } from "react-native";
+
 import type { ClassInput } from "twrnc/dist/esm/types";
 import tw from "../../lib/tailwind";
 

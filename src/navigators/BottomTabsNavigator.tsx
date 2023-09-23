@@ -1,16 +1,17 @@
-import { Ionicons } from "@expo/vector-icons";
 import {
     BottomTabNavigationOptions,
     createBottomTabNavigator,
 } from "@react-navigation/bottom-tabs";
-import IconButton from "../components/ui/IconButton";
-import tw from "../lib/tailwind";
-import AllExpensesScreen from "../screens/AllExpenses";
-import RecentExpensesScreen from "../screens/RecentExpenses";
 import {
     ExpenseOverviewParamList,
     RootStackNavigationProps,
 } from "../types/navigation";
+
+import { Ionicons } from "@expo/vector-icons";
+import IconButton from "../components/ui/IconButton";
+import tw from "../lib/tailwind";
+import AllExpensesScreen from "../screens/AllExpenses";
+import RecentExpensesScreen from "../screens/RecentExpenses";
 
 const BottomTab = createBottomTabNavigator<ExpenseOverviewParamList>();
 

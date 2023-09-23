@@ -1,7 +1,7 @@
-import React from "react";
-import { View, Text } from "react-native";
-import { Expense } from "../../types/types";
+import { Text, View } from "react-native";
+
 import tw from "../../lib/tailwind";
+import { Expense } from "../../types/types";
 
 type Props = {
     periodName: string;

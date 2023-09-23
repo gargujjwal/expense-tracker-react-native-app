@@ -1,4 +1,3 @@
-import React from "react";
 import { View } from "react-native";
 import tw from "../../lib/tailwind";
 import { useDeleteExpenseByIdMutation } from "../../store/redux/expensesAPI";

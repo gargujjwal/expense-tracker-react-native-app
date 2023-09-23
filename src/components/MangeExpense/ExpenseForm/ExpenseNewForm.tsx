@@ -1,8 +1,7 @@
-import ExpenseForm, { ExpenseFormProps } from "./ExpenseForm";
+import ExpenseForm, { ExpenseFormProps } from ".";
 
-import React from "react";
-import { useAddExpenseMutation } from "../../store/redux/expensesAPI";
-import LoadingSpinner from "../ui/LoadingSpinner";
+import { useAddExpenseMutation } from "../../../store/redux/expensesAPI";
+import LoadingSpinner from "../../ui/LoadingSpinner";
 
 type Props = {
     onCancel: () => void;

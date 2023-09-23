@@ -164,15 +164,15 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 ## Links
 
-- Live Site URL: [https://expense-tracker-react-native-app.onrender.com](https://expense-tracker-react-native-app.onrender.com)
+-   Live Site URL: [https://expense-tracker-react-native-app.onrender.com](https://expense-tracker-react-native-app.onrender.com)
 
 <!-- AUTHOR -->
 
 ## Author
 
-- Website - [Ujjwal Garg](https://github.com/ujjwalgarg100204)
-- Instagram - [@ujjwalgarg100204](https://www.instagram.com/ujjwalgarg100204/)
-- Linkedin - [@ujjwalgarg100204](https://www.linkedin.com/in/ujjwal-garg-3a5639243/)
-- Twitter -[@UjwalGarg100204](https://twitter.com/UjwalGarg100204)
+-   Website - [Ujjwal Garg](https://github.com/ujjwalgarg100204)
+-   Instagram - [@ujjwalgarg100204](https://www.instagram.com/ujjwalgarg100204/)
+-   Linkedin - [@ujjwalgarg100204](https://www.linkedin.com/in/ujjwal-garg-3a5639243/)
+-   Twitter -[@UjwalGarg100204](https://twitter.com/UjwalGarg100204)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>

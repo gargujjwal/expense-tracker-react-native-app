@@ -7,14 +7,14 @@ import StackNavigator from "./src/navigators/StackNavigator";
 import { store } from "./src/store/redux/store";
 
 export default function App() {
-  return (
-    <View style={tw`flex-1`}>
-      <Provider store={store}>
-        <NavigationContainer>
-          <StackNavigator />
-        </NavigationContainer>
-      </Provider>
-      <StatusBar style="light" />
-    </View>
-  );
+    return (
+        <View style={tw`flex-1`}>
+            <Provider store={store}>
+                <NavigationContainer>
+                    <StackNavigator />
+                </NavigationContainer>
+            </Provider>
+            <StatusBar style="light" />
+        </View>
+    );
 }

@@ -1,6 +1,5 @@
 import { ActivityIndicator, Text, View } from "react-native";
 
-import React from "react";
 import tw from "../../lib/tailwind";
 
 type Props = {

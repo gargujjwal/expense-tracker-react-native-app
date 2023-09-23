@@ -3,10 +3,10 @@ import { Text, View } from "react-native";
 
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
-import tw from "../../lib/tailwind";
-import { Expense } from "../../types/types";
-import Button from "../ui/Button";
-import Input from "./Input";
+import tw from "../../../lib/tailwind";
+import { Expense } from "../../../types/types";
+import Button from "../../ui/Button";
+import Input from "../Input";
 
 const expenseSchema = z.object({
     amount: z.string().refine(value => !isNaN(+value), {

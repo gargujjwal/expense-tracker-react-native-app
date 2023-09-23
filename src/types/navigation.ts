@@ -3,9 +3,10 @@ import type {
     NavigatorScreenParams,
 } from "@react-navigation/native";
 import type {
-    NativeStackScreenProps,
     NativeStackNavigationProp,
+    NativeStackScreenProps,
 } from "@react-navigation/native-stack";
+
 import type { BottomTabScreenProps } from "@react-navigation/bottom-tabs";
 
 export type RootStackParamList = {

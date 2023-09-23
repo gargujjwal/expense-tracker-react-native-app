@@ -1,5 +1,5 @@
-import { Expense } from "./types/types";
 import { FirebaseResponseType } from "./store/redux/expensesAPI";
+import { Expense } from "./types/types";
 
 export const getFormattedDate = (date: Date) => date.toISOString().slice(0, 10);
 
