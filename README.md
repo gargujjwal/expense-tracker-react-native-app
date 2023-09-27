@@ -88,6 +88,8 @@
 	<img src="./screenshots/ss4.png" alt="mobile view" height="500" /> 
 	<img src="./screenshots/ss5.png" alt="mobile view" height="500" /> 
 	<img src="./screenshots/ss6.png" alt="mobile view" height="500" /> 
+	<img src="./screenshots/ss7.png" alt="mobile view" height="500" /> 
+	<img src="./screenshots/ss8.png" alt="mobile view" height="500" /> 
 </p>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
