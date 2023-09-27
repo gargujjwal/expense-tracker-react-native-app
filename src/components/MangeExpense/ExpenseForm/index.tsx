@@ -5,7 +5,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import tw from "../../../lib/tailwind";
 import { Expense } from "../../../types/types";
-import Button from "../../ui/Button";
+import Button from "../../UI/Button";
 import Input from "../Input";
 
 const expenseSchema = z.object({

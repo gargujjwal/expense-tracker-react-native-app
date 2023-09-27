@@ -31,3 +31,17 @@ export type ExpenseOverviewScreenProps<
     BottomTabScreenProps<ExpenseOverviewParamList, T>,
     RootStackScreenProps<keyof RootStackParamList>
 >;
+
+export type AuthStackParamList = {
+    login: undefined;
+    signUp: undefined;
+};
+
+export type AuthStackNavigationProps<T extends keyof AuthStackParamList> =
+    NativeStackNavigationProp<AuthStackParamList, T>;
+
+declare global {
+    namespace ReactNavigation {
+        interface RootParamList extends RootStackParamList {}
+    }
+}

@@ -6,7 +6,7 @@ import BottomTabsNavigator from "./BottomTabsNavigator";
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
-const StackNavigator = () => {
+const RootStackNavigator = () => {
     return (
         <Stack.Navigator
             initialRouteName="ExpenseOverview"
@@ -29,4 +29,4 @@ const StackNavigator = () => {
     );
 };
 
-export default StackNavigator;
+export default RootStackNavigator;

@@ -1,7 +1,9 @@
 import ExpenseForm, { ExpenseFormProps } from ".";
 
-import { useAddExpenseMutation } from "../../../store/redux/expensesAPI";
-import LoadingSpinner from "../../ui/LoadingSpinner";
+import { useAppSelector } from "../../../hooks/store";
+import { useAddExpenseMutation } from "../../../redux/expensesAPI";
+import { selectUser } from "../../../redux/userSlice";
+import LoadingSpinner from "../../UI/LoadingSpinner";
 
 type Props = {
     onCancel: () => void;
@@ -9,9 +11,16 @@ type Props = {
 };
 
 const ExpenseNewForm = ({ onCancel, onConfirm }: Props) => {
+    const user = useAppSelector(selectUser);
+    if (!user.id) return <LoadingSpinner />;
+
     const [addExpense, { isLoading }] = useAddExpenseMutation();
-    const handleFormConfirm: ExpenseFormProps["onConfirm"] = updatedExpense => {
-        addExpense(updatedExpense);
+    const handleFormConfirm: ExpenseFormProps["onConfirm"] = newExpense => {
+        addExpense({
+            expense: newExpense,
+            token: user.token,
+            userId: user.id,
+        });
         onConfirm();
     };
 

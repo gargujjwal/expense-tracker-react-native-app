@@ -2,12 +2,20 @@ import { useEffect, useState } from "react";
 import { firebaseExpensesToExpenses, getDateMinusDays } from "../utils";
 
 import ExpensesOutput from "../components/ExpensesOutput/ExpensesOutput";
-import LoadingSpinner from "../components/ui/LoadingSpinner";
-import { useGetExpensesQuery } from "../store/redux/expensesAPI";
+import LoadingSpinner from "../components/UI/LoadingSpinner";
+import { useAppSelector } from "../hooks/store";
+import { useGetExpensesQuery } from "../redux/expensesAPI";
+import { selectUser } from "../redux/userSlice";
 import { Expense } from "../types/types";
 
 const RecentExpensesScreen = () => {
-    const { data, isLoading } = useGetExpensesQuery(undefined);
+    const user = useAppSelector(selectUser);
+    if (!(user.id || user.token)) return <LoadingSpinner />;
+
+    const { data, isLoading } = useGetExpensesQuery({
+        token: user.token,
+        userId: user.id,
+    });
 
     const [recentExpenses, setRecentExpenses] = useState<Expense[]>([]);
 

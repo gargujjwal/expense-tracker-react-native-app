@@ -1,17 +1,26 @@
 import { View } from "react-native";
+import { useAppSelector } from "../../hooks/store";
 import tw from "../../lib/tailwind";
-import { useDeleteExpenseByIdMutation } from "../../store/redux/expensesAPI";
+import { useDeleteExpenseByIdMutation } from "../../redux/expensesAPI";
+import { selectUser } from "../../redux/userSlice";
 import { Expense } from "../../types/types";
-import IconButton from "../ui/IconButton";
-import LoadingSpinner from "../ui/LoadingSpinner";
+import IconButton from "../UI/IconButton";
+import LoadingSpinner from "../UI/LoadingSpinner";
 
 type Props = {
     expense: Pick<Expense, "id">;
 };
 
 const ExpenseDeleteButton = ({ expense }: Props) => {
+    const user = useAppSelector(selectUser);
+    if (!user.id) return <LoadingSpinner />;
     const [deleteExpense, { isLoading }] = useDeleteExpenseByIdMutation();
-    const handleExpenseDelete = () => deleteExpense(expense.id);
+    const handleExpenseDelete = () =>
+        deleteExpense({
+            expenseId: expense.id,
+            token: user.token,
+            userId: user.id,
+        });
 
     return (
         <View
