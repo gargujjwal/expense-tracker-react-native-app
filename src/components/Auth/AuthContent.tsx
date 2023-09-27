@@ -1,12 +1,12 @@
 import LoginForm, { Props as LoginFormProps } from "./LoginForm";
 import SignUpForm, { Props as SignUpFormProps } from "./SignUpForm";
-import { Text, View } from "react-native";
 
+import { useNavigation } from "@react-navigation/native";
+import React from "react";
+import { View } from "react-native";
+import tw from "../../lib/tailwind";
 import { AuthStackNavigationProps } from "../../types/navigation";
 import Button from "../UI/Button";
-import React from "react";
-import tw from "../../lib/tailwind";
-import { useNavigation } from "@react-navigation/native";
 
 type Props =
     | {
@@ -16,21 +16,22 @@ type Props =
     | { mode: "login"; onAuth: LoginFormProps["onSuccessfulLogin"] };
 
 const AuthContent = ({ mode, onAuth }: Props) => {
-    const { push } = useNavigation<AuthStackNavigationProps<"login">>();
+    const navigation = useNavigation<AuthStackNavigationProps<"login">>();
 
     const handleAuthModeChange = () => {
-        push(mode === "signUp" ? "login" : "signUp");
+        navigation.replace(mode === "signUp" ? "login" : "signUp");
     };
 
     return (
-        <View style={tw`flex-1`}>
-            <Text>AuthContent</Text>
+        <View
+            style={tw`mt-16 mx-8 p-4 pb-8 rounded-lg bg-primary-800 shadow-md`}
+        >
             {mode === "signUp" ? (
                 <SignUpForm onSuccessfulSignUp={onAuth} />
             ) : (
                 <LoginForm onSuccessfulLogin={onAuth} />
             )}
-            <View>
+            <View style={tw`mt-2`}>
                 <Button variant="flat" onPress={handleAuthModeChange}>
                     {mode === "signUp"
                         ? "Already have an account?"

@@ -61,15 +61,14 @@ const SignUpForm = ({ onSuccessfulSignUp }: Props) => {
     };
 
     return (
-        <View style={tw`flex-1`}>
-            <View style={tw`flex-1 flex-col`}>
+        <View>
+            <View>
                 <Controller
                     control={control}
                     name="email"
                     render={({ field: { onChange, onBlur, value } }) => (
                         <Input
                             label="Email Address"
-                            containerStyle="flex-1"
                             isValid={!errors.email}
                             textInputConfig={{
                                 keyboardType: "email-address",
@@ -89,7 +88,6 @@ const SignUpForm = ({ onSuccessfulSignUp }: Props) => {
                     render={({ field: { onChange, onBlur, value } }) => (
                         <Input
                             label="Confirm Email Address"
-                            containerStyle="flex-1"
                             isValid={!errors.confirmEmail}
                             textInputConfig={{
                                 keyboardType: "email-address",
@@ -109,7 +107,6 @@ const SignUpForm = ({ onSuccessfulSignUp }: Props) => {
                     render={({ field: { onChange, onBlur, value } }) => (
                         <Input
                             label="Password"
-                            containerStyle="flex-1"
                             isValid={!errors.password}
                             textInputConfig={{
                                 placeholder: "",
@@ -127,7 +124,6 @@ const SignUpForm = ({ onSuccessfulSignUp }: Props) => {
                     render={({ field: { onChange, onBlur, value } }) => (
                         <Input
                             label="Confirm Password"
-                            containerStyle="flex-1"
                             isValid={!errors.confirmPassword}
                             textInputConfig={{
                                 placeholder: "",

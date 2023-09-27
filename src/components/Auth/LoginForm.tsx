@@ -1,12 +1,12 @@
 import { Controller, SubmitHandler, useForm } from "react-hook-form";
 import { Text, View } from "react-native";
 
+import { zodResolver } from "@hookform/resolvers/zod";
+import z from "zod";
+import tw from "../../lib/tailwind";
 import Button from "../UI/Button";
 import Input from "../UI/Input";
 import LoadingSpinner from "../UI/LoadingSpinner";
-import tw from "../../lib/tailwind";
-import z from "zod";
-import { zodResolver } from "@hookform/resolvers/zod";
 
 export type Props = {
     onSuccessfulLogin: SubmitHandler<LoginFormSchema>;
@@ -44,15 +44,14 @@ const LoginForm = ({ onSuccessfulLogin }: Props) => {
         return <LoadingSpinner text="Hang on, We are logging you in!" />;
 
     return (
-        <View style={tw`flex-1`}>
-            <View style={tw`flex-1 justify-center gap-1`}>
+        <View>
+            <View>
                 <Controller
                     control={control}
                     name="email"
                     render={({ field: { onChange, onBlur, value } }) => (
                         <Input
                             label="Email Address"
-                            containerStyle="flex-1"
                             isValid={!errors.email}
                             textInputConfig={{
                                 keyboardType: "email-address",
@@ -72,7 +71,6 @@ const LoginForm = ({ onSuccessfulLogin }: Props) => {
                     render={({ field: { onChange, onBlur, value } }) => (
                         <Input
                             label="Password"
-                            containerStyle="flex-1"
                             isValid={!errors.password}
                             textInputConfig={{
                                 placeholder: "",
